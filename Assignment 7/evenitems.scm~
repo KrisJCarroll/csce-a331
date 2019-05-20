@@ -1,0 +1,7 @@
+#lang scheme
+
+(define (evenitems list)
+    (cond
+       ((null? list) '()) ; checking if list is empty, return empty list
+       ((null? (cdr list)) list) ; checking if only item in list, return the item
+       (else (cons (car list) (evenitems (cddr list)))))) ; take the first item and recurse on remaining list after removing an additional item
